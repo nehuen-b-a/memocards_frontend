@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoCard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <span class="headerTitle">Mem</span>
+            <img src="logo.png" alt="MemoCard Logo">
+            <span class="headerTitle">Card</span>
+        </div>
+        <button class="button header-button">
+            <span class="iconify" data-icon="iconoir:user" data-width="3rem" data-height="3rem" ></span>
+        </button>
+    </div>
+</header>
+<main class="main-tematica">
+    <div class="bigCard side"></div>
+    <div>
+        <div class="bigCard-container">
+            <!-- Asegúrate de aumentar también el tamaño del botón en el CSS (por ejemplo, de 3rem a 4rem) -->
+            <button class="previous-button">
+                <span class="iconify" data-icon="mdi-chevron-left" data-width="4rem" data-height="4rem"></span>
+            </button>
+            <section class="bigCard">
+                <div class="bigCard-handlebar">
+                    <button class="back-button">
+                        <span class="iconify" data-icon="mdi-arrow-left" data-width="4rem" data-height="4rem"></span>
+                    </button>
+                    <h2>Tematica: Historia</h2>
+                    <button class="edit-button">
+                        <span class="iconify" data-icon="mdi-pencil" data-width="4rem" data-height="4rem"></span>
+                    </button>
+                </div>
+                <div class="search-filter-container" style="margin: 1.5rem">
+                    <select class="filter-select">
+                        <option value="default" selected disabled>Ordenar</option>
+                        <option value="cantidad-repaso">Cantidad de Repasos</option>
+                        <option value="ultimo-repaso">Ultimo Repaso</option>
+                        <option value="nombre">Nombre</option>
+                        <option value="personalizado">Personalizado</option>
+                    </select>
+
+                    <div class="search-container">
+                        <label>
+                            <input class="searchbar" type="text" placeholder="Buscar...">
+                        </label>
+                    </div>
+                </div>
+                <div class="smallCard-container">
+                    <div class="small-card">
+                        <h4 class="mazoTitle">Argentina 1880-1930</h4>
+                        <p class="mazoText">120 Tarjetas</p>
+                    </div>
+                    <div class="small-card">
+                        <h4 class="mazoTitle">Imperio Romano 200-300</h4>
+                        <p class="mazoText">95 Tarjetas</p>
+                    </div>
+                    <div class="small-card">
+                        <h3 class="mazoTitle">Argentina 1880-1930</h3>
+                        <p class="mazoText">120 Tarjetas</p>
+                    </div>
+                    <div class="small-card">
+                        <h3 class="mazoTitle">Argentina 1880-1930</h3>
+                        <p class="mazoText">120 Tarjetas</p>
+                    </div>
+                    <div class="small-card">
+                        <h3 class="mazoTitle">Argentina 1880-1930</h3>
+                        <p class="mazoText">120 Tarjetas</p>
+                    </div>
+                </div>
+            </section>
+            <button class="next-button">
+                <span class="iconify" data-icon="mdi-chevron-right" data-width="4rem" data-height="4rem"></span>
+            </button>
+        </div>
+    </div>
+    <div class="bigCard side"></div>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>MemoCard</h3>
+            <ul class="footer-links">
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Categorías</h3>
+            <ul class="footer-links">
+                <li><a href="#">Ciencias</a></li>
+                <li><a href="#">Psicología</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Arte</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+                <li><a href="#">Términos de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 MemoCard. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>

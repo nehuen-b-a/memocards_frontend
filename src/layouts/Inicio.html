@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoCard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <span class="headerTitle">Mem</span>
+            <img src="logo.png" alt="MemoCard Logo">
+            <span class="headerTitle">Card</span>
+        </div>
+        <button class="button header-button side">
+            <span class="iconify" data-icon="iconoir:user" data-width="3rem" data-height="3rem" ></span>
+        </button>
+    </div>
+</header>
+<main class="main">
+    <div class="search-filter-container">
+        <select class="filter-select">
+            <option value="default" selected disabled>Ordenar</option>
+            <option value="cantidad-repaso">Cantidad de Repasos</option>
+            <option value="ultimo-repaso">Ultimo Repaso</option>
+            <option value="nombre">Nombre</option>
+            <option value="personalizado">Personalizado</option>
+        </select>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </div>
+
+    <section class="card-container scroll-container">
+        <div class="card">
+            <h2 class="CardTitle">Ciencias</h2>
+            <p class="CardText">
+                Estudio sistemático de la naturaleza y el comportamiento del mundo físico mediante la observación y experimentación.
+            </p>
+            <p class="CardText">120 Tarjetas</p>
+        </div>
+
+        <div class="card">
+            <h2 class="CardTitle">Psicología</h2>
+            <p class="CardText">
+                Ciencia que estudia los procesos mentales, las sensaciones, las percepciones y el comportamiento del ser humano.
+            </p>
+            <p class="CardText">95 Tarjetas</p>
+        </div>
+
+        <div class="card">
+            <h2 class="CardTitle">Historia</h2>
+            <p class="CardText">
+                Estudio de los eventos del pasado a través de registros históricos y su interpretación crítica.
+            </p>
+            <p class="CardText">150 Tarjetas</p>
+        </div>
+
+        <div class="card">
+            <h2 class="CardTitle">Filosofía</h2>
+            <p class="CardText">
+                Estudio de problemas fundamentales sobre la existencia, el conocimiento, la verdad y la moral.
+            </p>
+            <p class="CardText">80 Tarjetas</p>
+        </div>
+
+        <div class="card">
+            <h2 class="CardTitle">Arte</h2>
+            <p class="CardText">
+                Expresión humana de creatividad que abarca diversas disciplinas como pintura, escultura y música.
+            </p>
+            <p class="CardText">65 Tarjetas</p>
+        </div>
+
+        <button class="grid-floating-btn">+</button>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>MemoCard</h3>
+            <ul class="footer-links">
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Categorías</h3>
+            <ul class="footer-links">
+                <li><a href="#">Ciencias</a></li>
+                <li><a href="#">Psicología</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Arte</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+                <li><a href="#">Términos de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 MemoCard. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>
