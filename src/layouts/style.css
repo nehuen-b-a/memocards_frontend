@@ -444,9 +444,179 @@ button:active {
 
 
 
-/*-- ---*/
+/*--memocard--questions-answers -*/
 
 
+.main-memocard{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/*===============================
+  Estilos para Preguntas y Respuestas
+===============================================*/
+
+/* Estilo para la pregunta */
+.question {
+    padding: 1rem;
+    background: #ffffff;
+    border-left: 5px solid #00b894;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2d3436;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Botón para mostrar/ocultar la respuesta */
+.show-answer-button {
+    background: #00b894;
+    color: #fff;
+    margin: 1rem 0 1rem 0 ;
+    max-height: 3rem;
+    max-width: 10rem;
+    text-align: center;
+}
+.show-answer-button:hover {
+transform: scale(1.2);}
+
+
+
+/* Contenedor de la respuesta (por defecto oculto) */
+.answer-container {
+    display: none; /* Se mostrará al hacer clic en el botón */
+    animation: fadeIn 0.5s ease forwards;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    gap: 1rem;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+/* Clase para mostrar la respuesta */
+.answer-container.active {
+    display: grid;
+}
+
+/* Estilos para el texto de la respuesta */
+.answer-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.answer-text p {
+    margin-bottom: 0.8rem;
+}
+
+.answer-text ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Estilos para la imagen de la respuesta */
+.answer-img {
+    display: flex;
+    justify-content: center;
+}
+
+.answer-img img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el reproductor de audio */
+.answer-audio {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.answer-audio audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para el reproductor de video (iframe) */
+.answer-video {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.answer-video iframe {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+}
+
+/*Feedback*/
+
+.feedback{
+    margin: 1rem auto;
+    display: none;
+    border-radius: 20px;
+    border:2px solid #000 ;
+    justify-content: center;
+}
+
+.feedback.active {
+    display: flex;
+}
+
+.feedback-item{
+    padding: 1.5vh 2vw;
+    color: white;
+}
+.feedback-item:last-of-type{
+    border: none ;
+}
+
+.feedback-item:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    box-shadow:  0 0 5px rgb(0, 255, 155);
+}
+
+#olvido{
+    border-radius: 20px 0 0 20px;
+    background: #2d3436;
+}
+#dificil{
+    background: teal;
+}
+#bien{
+    background: #00b894;
+}
+#facil{
+    border-radius: 0 20px 20px 0;
+    background: #77C8aa ;
+}
+
+
+
+/* Animación de aparición (fadeIn) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*-media-*/
 
 
 @media (max-width: 768px) {
@@ -475,9 +645,7 @@ button:active {
     .footer-links a:hover {
         transform: none;
     }
-}
 
-@media (max-width: 600px) {
     .card-container {
         padding-bottom: 30px;
     }
@@ -490,6 +658,10 @@ button:active {
 
     .main {
         margin: 0 5%;
+    }
+
+    .answer-container {
+        grid-template-columns: 1fr;
     }
 }
 
