@@ -123,6 +123,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 5fr;
+    overflow: auto;
 }
 
 .bigCard:hover {
@@ -487,6 +488,7 @@ transform: scale(1.2);}
 .answer-container {
     display: none; /* Se mostrará al hacer clic en el botón */
     animation: fadeIn 0.5s ease forwards;
+    min-height: 250px;
     background: #f9f9f9;
     padding: 1.5rem;
     border-radius: 8px;
@@ -576,6 +578,7 @@ transform: scale(1.2);}
 
 .feedback-item{
     padding: 1.5vh 2vw;
+    min-width: 4rem;
     color: white;
 }
 .feedback-item:last-of-type{

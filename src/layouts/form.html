@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar MemoCard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
+    <style>
+        /* Agrega estilos propios para el formulario de edición */
+        .edit-form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .edit-form-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .edit-form-group {
+            margin-bottom: 1.5rem;
+        }
+        .edit-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        .edit-form-group input[type="text"],
+        .edit-form-group input[type="url"],
+        .edit-form-group textarea,
+        .edit-form-group input[type="file"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        .edit-form-group input:focus,
+        .edit-form-group textarea:focus {
+            border-color: #00b894;
+            box-shadow: 0 0 10px rgba(0,184,148,0.2);
+            outline: none;
+        }
+        .feedback-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .feedback-option {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        .feedback-option.active,
+        .feedback-option:hover {
+            border-color: #00b894;
+            box-shadow: 0 0 5px rgba(0,184,148,0.5);
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .button-group button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button-save {
+            background: #00b894;
+            color: #fff;
+        }
+        .button-save:hover {
+            background: #009d7a;
+        }
+        .button-cancel {
+            background: #dfe6e9;
+            color: #333;
+        }
+        .button-cancel:hover {
+            background: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+<!-- Cabecera (header) similar a la landing page -->
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <span class="headerTitle">Mem</span>
+            <img src="logo.png" alt="MemoCard Logo">
+            <span class="headerTitle">Card</span>
+        </div>
+        <button class="button header-button">
+            <span class="iconify" data-icon="iconoir:user" data-width="3rem" data-height="3rem"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Contenedor principal para el formulario de edición -->
+<main>
+    <div class="edit-form-container">
+        <h2>Editar MemoCard</h2>
+        <form id="edit-memocard-form" action="procesar_edicion.php" method="POST" enctype="multipart/form-data">
+            <!-- Campo para el nombre del mazo -->
+            <div class="edit-form-group">
+                <label for="deckName">Mazo</label>
+                <input type="text" id="deckName" name="deckName" value="Argentina 1930-1970" required>
+            </div>
+            <!-- Campo para la pregunta -->
+            <div class="edit-form-group">
+                <label for="question">Pregunta</label>
+                <textarea id="question" name="question" rows="3" required>¿Cuándo se creó el Banco Central argentino? ¿Cómo era el sistema anterior? ¿Quiénes eran principales beneficiarios y opositores?</textarea>
+            </div>
+            <!-- Campo para la respuesta (texto) -->
+            <div class="edit-form-group">
+                <label for="answerText">Respuesta (Texto)</label>
+                <textarea id="answerText" name="answerText" rows="6" required>
+Creación del BCRA
+- Fecha: 28 de mayo de 1935 (Ley 12.155).
+- Contexto: Presidencia de Agustín P. Justo.
+
+Sistema anterior:
+- Banca múltiple: Emisión monetaria dispersa en varios bancos.
+- Inestabilidad: Falta de coordinación monetaria e inflación.
+- Influencia extranjera: Bancos británicos dominaban parte del sistema.
+
+Beneficiarios:
+- Sector agroexportador, bancos comerciales y el Estado.
+
+Opositores:
+- Bancos extranjeros, sectores conservadores y partidos de izquierda.
+
+Objetivo: Centralizar la emisión monetaria y regular el sistema financiero.
+          </textarea>
+            </div>
+            <!-- Campo para imagen ilustrativa -->
+            <div class="edit-form-group">
+                <label for="answerImage">Imagen Ilustrativa</label>
+                <input type="file" id="answerImage" name="answerImage" accept="image/*">
+                <!-- Si ya existe una imagen, se podría mostrar una vista previa -->
+                <img src="img-answer.webp" alt="Imagen actual" style="max-width: 200px; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <!-- Campo para audio -->
+            <div class="edit-form-group">
+                <label for="answerAudio">Audio (MP3)</label>
+                <input type="file" id="answerAudio" name="answerAudio" accept="audio/*">
+                <!-- Vista previa del audio actual -->
+                <audio controls style="margin-top: 1rem;">
+                    <source src="audio.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            <!-- Campo para video (enlace de YouTube) -->
+            <div class="edit-form-group">
+                <label for="answerVideo">Video (Enlace de YouTube)</label>
+                <input type="url" id="answerVideo" name="answerVideo" placeholder="https://www.youtube.com/watch?v=..." value="https://www.youtube.com/embed/Lv-O446lEjI">
+                <!-- Vista previa del video actual -->
+                <div class="answer-video" style="margin-top: 1rem;">
+                    <iframe src="https://www.youtube.com/embed/Lv-O446lEjI"
+                            width="560" height="315"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!-- Botones de acción -->
+            <div class="button-group">
+                <button type="submit" class="button-save">Guardar cambios</button>
+                <button type="button" class="button-cancel" onclick="window.history.back();">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
